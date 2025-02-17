@@ -1,0 +1,9 @@
+CREATE PROCEDURE UpdateBookPricesByAuthor
+    @AuthorId INT,
+    @NewPrice DECIMAL(18, 2)
+AS
+BEGIN
+    UPDATE Books
+    SET Price = @NewPrice
+    WHERE AuthorId = @AuthorId
+END
