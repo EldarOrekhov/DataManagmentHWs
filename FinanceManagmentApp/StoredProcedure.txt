@@ -1,0 +1,6 @@
+CREATE PROCEDURE GetTransactionsByCategory
+    @CategoryId INT
+AS
+BEGIN
+    SELECT * FROM Transactions WHERE CategoryId = @CategoryId
+END
