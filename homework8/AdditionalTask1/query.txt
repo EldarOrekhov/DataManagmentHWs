@@ -1,0 +1,22 @@
+CREATE DATABASE LibraryDb;
+
+USE LibraryDb;
+
+CREATE TABLE Authors (
+    AuthorId INT PRIMARY KEY IDENTITY,
+    Name NVARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Categories (
+    CategoryId INT PRIMARY KEY IDENTITY,
+    Name NVARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Books (
+    BookId INT PRIMARY KEY IDENTITY,
+    Title NVARCHAR(255) NOT NULL,
+    AuthorId INT FOREIGN KEY REFERENCES Authors(AuthorId),
+    CategoryId INT FOREIGN KEY REFERENCES Categories(CategoryId),
+    Price DECIMAL(10, 2) NOT NULL,
+    ReleaseDate DATE NOT NULL
+);

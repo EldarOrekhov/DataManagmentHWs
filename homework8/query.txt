@@ -1,0 +1,17 @@
+USE master;
+GO
+
+CREATE DATABASE TaskDb;
+GO
+
+USE TaskDb;
+GO
+
+CREATE TABLE Tasks (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Title NVARCHAR(255) NOT NULL,
+    Description NVARCHAR(MAX),
+    DueDate DATETIME NOT NULL,
+    IsCompleted BIT NOT NULL
+);
+GO
